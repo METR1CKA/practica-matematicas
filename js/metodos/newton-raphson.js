@@ -1,14 +1,23 @@
 // Método de Newton-Raphson
-function newtonRaphson(func, dfunc, x0, e, N) {
-  let x1, f, df, i;
-  for (i = 0; i < N; i++) {
-    f = func(x0);
-    df = dfunc(x0);
-    x1 = x0 - f / df;
-    if (Math.abs(x1 - x0) <= e) {
-      return x1;
-    }
-    x0 = x1;
-  }
-  return false;
+function newtonRaphson({ decimales, x0, f }) {
+  let epsilon = Math.pow(10, -decimales)
+
+  let df = math.derivative(f, 'x')
+
+  let x1, error
+
+  do {
+    let fValue = math.evaluate(f, { x: x0 })
+
+    let dfValue = df.evaluate({ x: x0 })
+
+    x1 = x0 - fValue / dfValue
+
+    error = Math.abs(x1 - x0)
+
+    x0 = x1
+
+  } while (error > epsilon)
+
+  return x1
 }

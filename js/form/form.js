@@ -15,45 +15,9 @@ form.submit(event => {
       return obj
     }, {})
 
-  if (method == 'eulerMejorado') {
-    const {
-      'em-iteraciones': iteraciones,
-      'em-paso': paso,
-      'em-x': x,
-      'em-y': y,
-      'em-f': f,
-    } = form_data
+  if (method == 'eulerMejorado') eulerResult({ decimales, form_data, result })
 
-    const res = eulerMejorado({
-      decimales: parseInt(decimales),
-      iteraciones: parseInt(iteraciones),
-      h: parseFloat(paso),
-      xn: parseFloat(x),
-      yn: parseFloat(y),
-      f
-    })
-
-    result.load('components/tables/euler-table.html', function () {
-      let filas = ''
-
-      for (let i = 0; i < res.x.length; i++) {
-        filas += '<tr><td>' + (i + 1) + '</td><td>' + res.x[i] + '</td><td>' + res.y[i] + '</td></tr>'
-      }
-
-      $('#euler-body-table').html(filas)
-    })
-  }
-
-  if (method == 'newtonRaphson') {
-    const {
-      'nr-x': x,
-      'nr-f': f,
-    } = form_data
-
-    console.log({
-      decimales, x, f
-    })
-  }
+  if (method == 'newtonRaphson') newtonRaphsonResult({ decimales, form_data, result })
 
   if (method == 'rungeKutta') {
     const {
