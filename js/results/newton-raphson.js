@@ -20,7 +20,9 @@ function newtonRaphsonResult({
     $tbody.empty()
 
     let $tr = $('<tr>')
+
     $tr.append($('<td>').text(res))
+
     $tbody.append($tr)
   })
 }
