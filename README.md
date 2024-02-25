@@ -5,5 +5,5 @@ Practica de matematicas para ingeneria 2
 ## Metodos
 
 - Euler Mejorado
-- Runge-Kutta
+- Runge-Kutta de cuarto orden
 - Newton-Raphson
