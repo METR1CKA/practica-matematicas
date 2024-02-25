@@ -1,5 +1,11 @@
 var form = $('#form')
 
+const func_methods = {
+  eulerMejorado: eulerResult,
+  newtonRaphson: newtonRaphsonResult,
+  rungeKutta: rungeKuttaResult
+}
+
 form.submit(event => {
   event.preventDefault()
 
@@ -15,21 +21,5 @@ form.submit(event => {
       return obj
     }, {})
 
-  if (method == 'eulerMejorado') eulerResult({ decimales, form_data, result })
-
-  if (method == 'newtonRaphson') newtonRaphsonResult({ decimales, form_data, result })
-
-  if (method == 'rungeKutta') {
-    const {
-      'rk4o-paso': paso,
-      'rk4o-x0': x0,
-      'rk4o-y': y,
-      'rk4o-yn': yn,
-      'rk4o-f': f,
-    } = form_data
-
-    console.log({
-      decimales, paso, x0, y, yn, f
-    })
-  }
+  func_methods[method]({ decimales, form_data, result })
 })
