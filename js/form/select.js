@@ -1,5 +1,6 @@
 var m = $('#method')
-var methods = {
+
+const methods = {
   eulerMejorado: {
     div: $('.euler-mejorado'),
     inputs: ['#em-iteraciones', '#em-paso', '#em-x', '#em-y', '#em-f']
@@ -17,7 +18,7 @@ var methods = {
 function change() {
   var method = m.val()
 
-  if (method.toUpperCase() != 'NA') {
+  if (method.toUpperCase() !== 'NA') {
     $('#decimales').prop('disabled', false)
     $('#calcular').prop('disabled', false)
   } else {
@@ -26,15 +27,15 @@ function change() {
   }
 
   for (var key in methods) {
-    if (key == method) {
+    if (key === method) {
       methods[method].div.show()
-      methods[method].inputs.forEach(function (input_id) {
-        $(input_id).attr('required', 'required')
+      methods[method].inputs.forEach(function (input) {
+        $(input).attr('required', 'required')
       })
     } else {
       methods[key].div.hide()
-      methods[key].inputs.forEach(function (input_id) {
-        $(input_id).removeAttr('required')
+      methods[key].inputs.forEach(function (input) {
+        $(input).removeAttr('required')
       })
     }
   }

@@ -28,10 +28,10 @@
             Euler Mejorado
           </option>
           <option value="rungeKutta">
-            Runge Kutta 4to orden
+            Runge-Kutta 4to orden
           </option>
           <option value="newtonRaphson">
-            Newton Raphson
+            Newton-Raphson
           </option>
         </select>
       </div>
@@ -45,105 +45,12 @@
       </div>
 
       <div class="euler-mejorado">
-        <div class="form-group">
-          <label for="em-iteraciones">
-            Número de iteraciones:
-          </label>
-          <input type="number" placeholder="Debe ser un entero mayor de 0"
-            id="em-iteraciones" name="em-iteraciones" class="form-control" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="em-paso">
-            Tamaño de paso:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0"
-            id="em-paso" name="em-paso" class="form-control" step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="em-x">
-            Valor de x:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0"
-            id="em-x" name="em-x" class="form-control" step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="em-y">
-            Valor de y:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0"
-            id="em-y" name="em-y" class="form-control" step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="em-f">
-            Funcion a iterar:
-          </label>
-          <input type="text" placeholder="Escriba una ecuación valida"
-            id="em-f" name="em-f" class="form-control" step="any"min="0" required>
-        </div>
       </div>
 
       <div class="newton-raphson">
-        <div class="form-group">
-          <label for="nr-x">
-            Primer valor de x:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0" id="nr-x" name="nr-x" class="form-control"
-            step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="nr-f">
-            Funcion a iterar:
-          </label>
-          <input type="text" placeholder="Escriba una ecuación valida" id="nr-f" name="nr-f" class="form-control" step="any"
-            min="0" required>
-        </div>
       </div>
 
       <div class="runge-kutta-4to-orden">
-        <div class="form-group">
-          <label for="rk4o-paso">
-            Tamaño de paso:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0" id="rk4o-paso" name="rk4o-paso" class="form-control"
-            step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="rk4o-x0">
-            Valor inicial de x:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0" id="rk4o-x0" name="rk4o-x0" class="form-control"
-            step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="rk4o-y">
-            Valor de y:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0" id="rk4o-y" name="rk4o-y" class="form-control"
-            step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="rk4o-yn">
-            Valor de y:
-          </label>
-          <input type="number" placeholder="Debe ser un decimal mayor de 0" id="rk4o-yn" name="rk4o-yn" class="form-control"
-            step="any" min="0" required>
-        </div>
-
-        <div class="form-group">
-          <label for="rk4o-f">
-            Funcion a iterar:
-          </label>
-          <input type="text" placeholder="Escriba una ecuación valida" id="rk4o-f" name="rk4o-f" class="form-control" step="any"
-            min="0" required>
-        </div>
       </div>
 
       <button id="calcular" type="submit" class="btn btn-primary" disabled>
@@ -165,8 +72,11 @@
   <p>Fernando Salazar Manzano - 20170031 - Matematicas para ingenieria 2 - MSC Daniel Rosales Díaz Miron</p>
 </footer>
 
-<script type="text/javascript" src="js/metodos.js"></script>
-<script type="text/javascript" src="js/select.js"></script>
-<script type="text/javascript" src="js/form.js"></script>
+<script type="text/javascript" src="js/metodos/euler-mejorado.js"></script>
+<script type="text/javascript" src="js/metodos/newton-raphson.js"></script>
+<script type="text/javascript" src="js/metodos/runge-kutta.js"></script>
+<script type="text/javascript" src="js/form/loader.js"></script>
+<script type="text/javascript" src="js/form/select.js"></script>
+<script type="text/javascript" src="js/form/form.js"></script>
 
 </html>
